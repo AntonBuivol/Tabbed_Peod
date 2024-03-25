@@ -5,12 +5,12 @@
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             xmlns:local="clr-namespace:Tabbed_Peod;assembly=Tabbed_Peod"
             mc:Ignorable="d"
-            x:Class="Tabbed_Peod.MainPage">
+            x:Class="Tabbed_Peod.Kevad"
+            Title="Kevad">
 
     <TabbedPage.Children>
-        <local:Talv/>
-        <local:Kevad/>
-        <local:Suvi/>
-        <local:Sugis/>
+        <local:Marts/>
+        <local:Aprill/>
+        <local:Mai/>
     </TabbedPage.Children>
 </TabbedPage>

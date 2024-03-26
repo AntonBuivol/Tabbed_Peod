@@ -6,7 +6,7 @@
             xmlns:local="clr-namespace:Tabbed_Peod;assembly=Tabbed_Peod"
             mc:Ignorable="d"
             x:Class="Tabbed_Peod.Sugis"
-            Title="Sugis">
+            Title="Sügis">
 
     <TabbedPage.Children>
         <local:September/>

@@ -19,53 +19,22 @@ namespace Tabbed_Peod
 
         public async void Vali()
         {
-            List<string> kuud = new List<string> { "Jaanuar", "Veebruar", "Märts", "Aprill", "Mai", "Juuni", "Juuli", "August", "September", "Oktoober", "November", "Detsember" };
+            List<string> kuud = new List<string> { "Talv", "Kevad", "Suvi", "Sügis" };
             string pages = await DisplayActionSheet("Vali", "Sule", null, kuud.ToArray());
-            if (pages == null )
+            switch (pages)
             {
-                await Navigation.PushAsync(new Jaanuar());
-            }
-            else
-            {
-                switch (pages)
-                {
-                    case "Jaanuar":
-                        await Navigation.PushAsync(new Jaanuar());
-                        break;
-                    case "Veebruar":
-                        await Navigation.PushAsync(new Veebruar());
-                        break;
-                    case "Marts":
-                        await Navigation.PushAsync(new Marts());
-                        break;
-                    case "Aprill":
-                        await Navigation.PushAsync(new Aprill());
-                        break;
-                    case "Mai":
-                        await Navigation.PushAsync(new Mai());
-                        break;
-                    case "Juuni":
-                        await Navigation.PushAsync(new Juuni());
-                        break;
-                    case "Juuli":
-                        await Navigation.PushAsync(new Juuli());
-                        break;
-                    case "August":
-                        await Navigation.PushAsync(new August());
-                        break;
-                    case "September":
-                        await Navigation.PushAsync(new September());
-                        break;
-                    case "Oktoober":
-                        await Navigation.PushAsync(new Oktoober());
-                        break;
-                    case "November":
-                        await Navigation.PushAsync(new November());
-                        break;
-                    case "Detsember":
-                        await Navigation.PushAsync(new Detsember());
-                        break;
-                }
+                case "Talv":
+                    ((MainPage)Application.Current.MainPage).CurrentPage = ((MainPage)Application.Current.MainPage).Children[0];
+                    break;
+                case "Kevad":
+                    ((MainPage)Application.Current.MainPage).CurrentPage = ((MainPage)Application.Current.MainPage).Children[1];
+                    break;
+                case "Suvi":
+                    ((MainPage)Application.Current.MainPage).CurrentPage = ((MainPage)Application.Current.MainPage).Children[2];
+                    break;
+                case "Sügis":
+                    ((MainPage)Application.Current.MainPage).CurrentPage = ((MainPage)Application.Current.MainPage).Children[3];
+                    break;
             }
         }
     }

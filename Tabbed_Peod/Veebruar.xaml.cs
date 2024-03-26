@@ -12,9 +12,41 @@ namespace Tabbed_Peod
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Veebruar : ContentPage
     {
+        Label nimetus, kirjeldus;
         public Veebruar()
         {
             InitializeComponent();
+
+            Grid grid = new Grid
+            {
+                RowDefinitions =
+                {
+                    new RowDefinition{Height = new GridLength(1, GridUnitType.Star) },
+                    new RowDefinition{Height = new GridLength(3, GridUnitType.Star) },
+                    new RowDefinition{Height = new GridLength(2, GridUnitType.Star) },
+                },
+                ColumnDefinitions =
+                {
+                    new ColumnDefinition{Width = new GridLength (1, GridUnitType.Star)}
+                }
+            };
+            nimetus = new Label
+            {
+                Text = "Veebruar",
+                FontSize = 30,
+            };
+            kirjeldus = new Label
+            {
+                Text = "2. veebruar – Tartu rahulepingu aastapäev \n24. veebruar – iseseisvuspäev, Eesti Vabariigi aastapäev"
+            };
+            Image img = new Image
+            {
+                Source = "veebruar"
+            };
+            grid.Children.Add(img, 0, 1);
+            grid.Children.Add(nimetus, 0, 0);
+            grid.Children.Add(kirjeldus, 0, 2);
+            Content = grid;
         }
     }
 }

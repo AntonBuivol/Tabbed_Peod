@@ -12,9 +12,41 @@ namespace Tabbed_Peod
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class August : ContentPage
     {
+        Label nimetus, kirjeldus;
         public August()
         {
             InitializeComponent();
+
+            Grid grid = new Grid
+            {
+                RowDefinitions =
+                {
+                    new RowDefinition{Height = new GridLength(1, GridUnitType.Star) },
+                    new RowDefinition{Height = new GridLength(3, GridUnitType.Star) },
+                    new RowDefinition{Height = new GridLength(2, GridUnitType.Star) },
+                },
+                ColumnDefinitions =
+                {
+                    new ColumnDefinition{Width = new GridLength (1, GridUnitType.Star)}
+                }
+            };
+            nimetus = new Label
+            {
+                Text = "August",
+                FontSize = 30,
+            };
+            kirjeldus = new Label
+            {
+                Text = "20. august – taasiseseisvumispäev \n23. august – kommunismi ja natsismi ohvrite mälestuspäev"
+            };
+            Image img = new Image
+            {
+                Source = "august"
+            };
+            grid.Children.Add(img, 0, 1);
+            grid.Children.Add(nimetus, 0, 0);
+            grid.Children.Add(kirjeldus, 0, 2);
+            Content = grid;
         }
     }
 }
